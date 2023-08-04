@@ -1,10 +1,12 @@
 package lab3p2_lloydcooperr;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab3P2_LloydCooperr {
     
     public static void main(String[] args) {
+        ArrayList<Vehiculo> vehiculos = new ArrayList();
         Scanner read = new Scanner(System.in);
         int opcion = 0;
         int option = 0;
@@ -14,10 +16,10 @@ public class Lab3P2_LloydCooperr {
         
         do{
             System.out.println("--------MENU--------");
-            System.out.println("1. Crear");
-            System.out.println("2. Listar");
-            System.out.println("3. Modificar");
-            System.out.println("4. Eliminar");
+            System.out.println("1. Crear vehiculo");
+            System.out.println("2. Modificar vehiculo");
+            System.out.println("3. Eliminar vehiculo");
+            System.out.println("4. Listar vehiculo");
             System.out.println("5. Salir");
             System.out.println("--------------------");
             opcion = read.nextInt();
@@ -26,10 +28,9 @@ public class Lab3P2_LloydCooperr {
             switch(opcion){
                 case 1:
                     System.out.println("Que desea crear?");
-                    System.out.println("1. Chef");
-                    System.out.println("2. Mesero");
-                    System.out.println("3. Bartender");
-                    System.out.println("4. Mesa");
+                    System.out.println("1. Automovil");
+                    System.out.println("2. Motocicleta");
+                    System.out.println("3. Autobus");
                     option = read.nextInt();
                     
                     switch(option){
@@ -53,14 +54,10 @@ public class Lab3P2_LloydCooperr {
                     }
                     break;
                 case 2:
-                    
-                    break;
-                case 3:
                     System.out.println("Que desea modificar?");
-                    System.out.println("1. Chefs");
-                    System.out.println("2. Meseros");
-                    System.out.println("3. Bartenders");
-                    System.out.println("4. Mesas");
+                    System.out.println("1. Automovil");
+                    System.out.println("2. Motocicleta");
+                    System.out.println("3. Autobus");
                     op1 = read.nextInt();
                     
                     switch(op1){
@@ -79,12 +76,11 @@ public class Lab3P2_LloydCooperr {
                             break;
                     }
                     break;
-                case 4:
+                case 3:
                     System.out.println("Que desea eliminar?");
-                    System.out.println("1. Chefs");
-                    System.out.println("2. Meseros");
-                    System.out.println("3. Bartenders");
-                    System.out.println("4. Mesas");
+                    System.out.println("1. Automovil");
+                    System.out.println("2. Motocicleta");
+                    System.out.println("3. Autobubs");
                     op2 = read.nextInt();
                     
                     switch (op2){
@@ -104,6 +100,9 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Opcion invalida");
                             break;
                     }
+                    break;
+                case 4:
+                    
                     break;
             }
         }while (opcion != 5);
