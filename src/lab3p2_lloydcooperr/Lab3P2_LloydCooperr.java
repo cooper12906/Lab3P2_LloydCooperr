@@ -90,8 +90,30 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Automovil creado correctamente");
                             break;
                         case 2:
-                            System.out.println("Ingrese el numero de placa");
-                            numeroPlaca = read.next();
+                            placaValida = false;
+                            
+                            do {
+                                System.out.println("Ingrese el numero de placa (Formato: HXXX1234 para automóviles y autobuses, BXXX1234 para motocicletas):");
+                                numeroPlaca = read.next();
+
+                                if ((numeroPlaca.length() == 8) &&
+                                    ((numeroPlaca.startsWith("H") || numeroPlaca.startsWith("B"))) &&
+                                    (numeroPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                    (numeroPlaca.substring(4).matches("\\d+"))) {
+                                    placaValida = true;
+
+                                    for (Vehiculo vehiculoExistente : vehiculos) {
+                                        if (vehiculoExistente.getNumeroPlaca().equals(numeroPlaca)) {
+                                            placaValida = false;
+                                            System.out.println("Ya existe un vehiculo con esta placa. Intente de nuevo.");
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Placa inválida. Asegúrese de que cumpla con el formato requerido.");
+                                }
+                            } while (!placaValida);
+                            
                             System.out.println("Ingrese la marca del vehiculo");
                             read.nextLine();
                             marca = read.nextLine();
@@ -115,8 +137,30 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Motocicleta creada correctamente");
                             break;
                         case 3:
-                            System.out.println("Ingrese el numero de placa");
-                            numeroPlaca = read.next();
+                            placaValida = false;
+                           
+                            do {
+                                System.out.println("Ingrese el numero de placa (Formato: HXXX1234 para automóviles y autobuses, BXXX1234 para motocicletas):");
+                                numeroPlaca = read.next();
+
+                                if ((numeroPlaca.length() == 8) &&
+                                    ((numeroPlaca.startsWith("H") || numeroPlaca.startsWith("B"))) &&
+                                    (numeroPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                    (numeroPlaca.substring(4).matches("\\d+"))) {
+                                    placaValida = true;
+
+                                    for (Vehiculo vehiculoExistente : vehiculos) {
+                                        if (vehiculoExistente.getNumeroPlaca().equals(numeroPlaca)) {
+                                            placaValida = false;
+                                            System.out.println("Ya existe un vehiculo con esta placa. Intente de nuevo.");
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Placa inválida. Asegúrese de que cumpla con el formato requerido.");
+                                }
+                            } while (!placaValida);
+                            
                             System.out.println("Ingrese la marca del vehiculo");
                             read.nextLine();
                             marca = read.nextLine();
