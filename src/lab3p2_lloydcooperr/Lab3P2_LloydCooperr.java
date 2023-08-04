@@ -224,10 +224,24 @@ public class Lab3P2_LloydCooperr {
 
                                 switch (propiedadModificar) {
                                     case 1:
-                                        System.out.println("Ingrese la nueva placa del vehiculo");
-                                        String numeroPlaca = read.next();
-                                        automovil.setNumeroPlaca(numeroPlaca);
-                                        
+                                        boolean placaValida = false;
+                                        String nuevaPlaca;
+
+                                        do {
+                                            System.out.println("Ingrese la nueva placa del vehículo (Formato: HXX1234):");
+                                            nuevaPlaca = read.next();
+
+                                            if ((nuevaPlaca.length() == 8) &&
+                                                ((nuevaPlaca.startsWith("H"))) &&
+                                                (nuevaPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                                (nuevaPlaca.substring(4).matches("\\d+"))) {
+                                                placaValida = true;
+                                            } else {
+                                                System.out.println("Placa inválida. Asegúrese de que cumpla con el formato requerido.");
+                                            }
+                                        } while (!placaValida);
+
+                                        automovil.setNumeroPlaca(nuevaPlaca);
                                         break;
                                     case 2:
                                         System.out.println("Ingrese la nueva marca del vehículo");
@@ -305,11 +319,11 @@ public class Lab3P2_LloydCooperr {
                                     String nuevaPlaca;
 
                                     do {
-                                        System.out.println("Ingrese la nueva placa del vehículo (Formato: HXXX1234 o BXXX1234):");
+                                        System.out.println("Ingrese la nueva placa del vehículo (Formato: BXX1234):");
                                         nuevaPlaca = read.next();
 
                                         if ((nuevaPlaca.length() == 8) &&
-                                            ((nuevaPlaca.startsWith("H") || nuevaPlaca.startsWith("B"))) &&
+                                            ((nuevaPlaca.startsWith("B"))) &&
                                             (nuevaPlaca.substring(1, 4).matches("[A-Z]+")) &&
                                             (nuevaPlaca.substring(4).matches("\\d+"))) {
                                             placaValida = true;
@@ -386,9 +400,24 @@ public class Lab3P2_LloydCooperr {
 
                                 switch (propiedadModificar) {
                                     case 1:
-                                        System.out.println("Ingrese la nueva placa del vehiculo");
-                                        String numeroPlaca = read.next();
-                                        autobus.setNumeroPlaca(numeroPlaca);
+                                        boolean placaValida = false;
+                                        String nuevaPlaca;
+
+                                        do {
+                                            System.out.println("Ingrese la nueva placa del vehículo (Formato: HXX1234):");
+                                            nuevaPlaca = read.next();
+
+                                            if ((nuevaPlaca.length() == 8) &&
+                                                ((nuevaPlaca.startsWith("H"))) &&
+                                                (nuevaPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                                (nuevaPlaca.substring(4).matches("\\d+"))) {
+                                                placaValida = true;
+                                            } else {
+                                                System.out.println("Placa inválida. Asegúrese de que cumpla con el formato requerido.");
+                                            }
+                                        } while (!placaValida);
+
+                                        autobus.setNumeroPlaca(nuevaPlaca);
                                         break;
                                     case 2:
                                         System.out.println("Ingrese la nueva marca del vehículo");
