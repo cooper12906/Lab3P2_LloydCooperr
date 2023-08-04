@@ -126,8 +126,15 @@ public class Lab3P2_LloydCooperr {
                             color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
                             System.out.println("Ingrese el año del vehiculo (dd/MM/yyyy)");
                             año = new Date(read.next());
-                            System.out.println("Ingrese la velocidad maxima de la motocicleta");
-                            double velocidadMaxima = read.nextDouble();
+                            double velocidadMaxima;
+                            do {
+                            System.out.println("Ingrese la velocidad máxima de la motocicleta:");
+                            velocidadMaxima = read.nextDouble();
+
+                            if (velocidadMaxima <= 0) {
+                                System.out.println("La velocidad máxima debe ser mayor que 0. Intente de nuevo.");
+                            }
+                        } while (velocidadMaxima <= 0);
                             System.out.println("Ingrese el peso de la motocicleta");
                             double pesoMoto = read.nextInt();
                             System.out.println("Ingrese el consumo de combustible de la motocicleta");
@@ -359,9 +366,17 @@ public class Lab3P2_LloydCooperr {
                                         motocicleta.setAño(año);
                                         break;
                                     case 7:
-                                        System.out.println("Ingrese la velocidad maxima de la motocicleta");
-                                        double velocidadMaxima = read.nextDouble();
-                                        motocicleta.setVelocidadMaxima(velocidadMaxima);
+                                        double nuevaVelocidadMaxima;
+                                        do {
+                                            System.out.println("Ingrese la nueva velocidad maxima de la motocicleta:");
+                                            nuevaVelocidadMaxima = read.nextDouble();
+
+                                            if (nuevaVelocidadMaxima <= 0) {
+                                                System.out.println("La velocidad maxima debe ser mayor que 0. Intente de nuevo.");
+                                            }
+                                        } while (nuevaVelocidadMaxima <= 0);
+
+                                        motocicleta.setVelocidadMaxima(nuevaVelocidadMaxima);
                                         break;
                                     case 8:
                                         System.out.println("Ingrese el peso de la motocicleta");
