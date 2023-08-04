@@ -39,23 +39,23 @@ public class Lab3P2_LloydCooperr {
                     switch(option){
                         case 1:
                             System.out.println("Ingrese el numero de placa");
-                            String numeroPlaca = read.nextLine();
+                            String numeroPlaca = read.next();
                             System.out.println("Ingrese la marca del vehiculo");
-                            String marca = read.nextLine();
+                            String marca = read.next();
                             System.out.println("Ingrese el modelo del vehiculo");
-                            String modelo = read.nextLine();
+                            String modelo = read.next();
                             System.out.println("Ingrese el tipo de vehiculo");
-                            String tipo = read.nextLine();
+                            String tipo = read.next();
                             System.out.println("Ingrese el color del vehiculo");
                             Color color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
                             System.out.println("Ingrese el año del vehiculo (dd/MM/yyyy)");
                             Date año = new Date(read.next());
                             System.out.println("Ingrese el tipo de combustible");
-                            String tipoCombustible = read.nextLine();
+                            String tipoCombustible = read.next();
                             System.out.println("Ingrese el numero de puertas");
                             int numeroPuertas = read.nextInt();
                             System.out.println("Ingrese el tipo de transmision");
-                            String tipoTransmision = read.nextLine();
+                            String tipoTransmision = read.next();
                             System.out.println("Ingrese el numero de asientos");
                             int numeroAsientos = read.nextInt();
                             
@@ -64,16 +64,51 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Automovil creado correctamente");
                             break;
                         case 2:
-                        
-                        break;
-
-                        case 3:
+                            System.out.println("Ingrese el numero de placa");
+                            numeroPlaca = read.next();
+                            System.out.println("Ingrese la marca del vehiculo");
+                            marca = read.next();
+                            System.out.println("Ingrese el modelo del vehiculo");
+                            modelo = read.next();
+                            System.out.println("Ingrese el tipo de vehiculo");
+                            tipo = read.next();
+                            System.out.println("Ingrese el color del vehiculo");
+                            color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
+                            System.out.println("Ingrese el año del vehiculo (dd/MM/yyyy)");
+                            año = new Date(read.next());
+                            System.out.println("Ingrese la velocidad maxima de la motocicleta");
+                            double velocidadMaxima = read.nextDouble();
+                            System.out.println("Ingrese el peso de la motocicleta");
+                            double pesoMoto = read.nextInt();
+                            System.out.println("Ingrese el consumo de combustible de la motocicleta");
+                            double consumoCombustible = read.nextDouble();
                             
+                            vehiculos.add(new Motocicleta(velocidadMaxima, pesoMoto, consumoCombustible, numeroPlaca, marca, modelo, tipo, color, año));
+                            System.out.println("Motocicleta creada correctamente");
                             break;
-
-                        case 4:
-                       
-                        break;
+                        case 3:
+                            System.out.println("Ingrese el numero de placa");
+                            numeroPlaca = read.next();
+                            System.out.println("Ingrese la marca del vehiculo");
+                            marca = read.next();
+                            System.out.println("Ingrese el modelo del vehiculo");
+                            modelo = read.next();
+                            System.out.println("Ingrese el tipo de vehiculo");
+                            tipo = read.next();
+                            System.out.println("Ingrese el color del vehiculo");
+                            color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
+                            System.out.println("Ingrese el año del vehiculo (dd/MM/yyyy)");
+                            año = new Date(read.next());
+                            System.out.println("Ingrese la capacidad de pasajeros del autobus");
+                            int cantidadPasajeros = read.nextInt();
+                            System.out.println("Ingrese el numero de ejes del autobus");
+                            int numeroEjes = read.nextInt();
+                            System.out.println("Ingrese la longitud del autobus");
+                            double longitud = read.nextDouble();
+                            
+                            vehiculos.add(new Autobus(cantidadPasajeros, numeroEjes, longitud, numeroPlaca, marca, modelo, tipo, color, año));
+                            System.out.println("Autobus agregado correctamente");
+                            break;
                         default:
                             System.out.println("Opcion no valida");
                             break;
