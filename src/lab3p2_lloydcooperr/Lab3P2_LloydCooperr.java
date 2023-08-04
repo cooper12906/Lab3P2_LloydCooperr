@@ -1,7 +1,10 @@
 package lab3p2_lloydcooperr;
 
+import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
+import javax.swing.JColorChooser;
 
 public class Lab3P2_LloydCooperr {
     
@@ -35,8 +38,31 @@ public class Lab3P2_LloydCooperr {
                     
                     switch(option){
                         case 1:
+                            System.out.println("Ingrese el numero de placa");
+                            String numeroPlaca = read.nextLine();
+                            System.out.println("Ingrese la marca del vehiculo");
+                            String marca = read.nextLine();
+                            System.out.println("Ingrese el modelo del vehiculo");
+                            String modelo = read.nextLine();
+                            System.out.println("Ingrese el tipo de vehiculo");
+                            String tipo = read.nextLine();
+                            System.out.println("Ingrese el color del vehiculo");
+                            Color color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
+                            System.out.println("Ingrese el año del vehiculo (dd/MM/yyyy)");
+                            Date año = new Date(read.next());
+                            System.out.println("Ingrese el tipo de combustible");
+                            String tipoCombustible = read.nextLine();
+                            System.out.println("Ingrese el numero de puertas");
+                            int numeroPuertas = read.nextInt();
+                            System.out.println("Ingrese el tipo de transmision");
+                            String tipoTransmision = read.nextLine();
+                            System.out.println("Ingrese el numero de asientos");
+                            int numeroAsientos = read.nextInt();
                             
-                           break;
+                            
+                            vehiculos.add(new Automovil(tipoCombustible, numeroPuertas, tipoTransmision, numeroAsientos, numeroPlaca, marca, modelo, tipo, color, año));
+                            System.out.println("Automovil creado correctamente");
+                            break;
                         case 2:
                         
                         break;
@@ -80,7 +106,7 @@ public class Lab3P2_LloydCooperr {
                     System.out.println("Que desea eliminar?");
                     System.out.println("1. Automovil");
                     System.out.println("2. Motocicleta");
-                    System.out.println("3. Autobubs");
+                    System.out.println("3. Autobus");
                     op2 = read.nextInt();
                     
                     switch (op2){
