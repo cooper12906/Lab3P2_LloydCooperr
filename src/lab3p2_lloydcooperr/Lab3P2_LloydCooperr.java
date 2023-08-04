@@ -39,8 +39,31 @@ public class Lab3P2_LloydCooperr {
                     
                     switch(option){
                         case 1:
-                            System.out.println("Ingrese el numero de placa");
-                            String numeroPlaca = read.next();
+                            boolean placaValida = false;
+                            String numeroPlaca;
+
+                            do {
+                                System.out.println("Ingrese el numero de placa (Formato: HXXX1234 para automóviles y autobuses, BXXX1234 para motocicletas):");
+                                numeroPlaca = read.next();
+
+                                if ((numeroPlaca.length() == 8) &&
+                                    ((numeroPlaca.startsWith("H") || numeroPlaca.startsWith("B"))) &&
+                                    (numeroPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                    (numeroPlaca.substring(4).matches("\\d+"))) {
+                                    placaValida = true;
+
+                                    for (Vehiculo vehiculoExistente : vehiculos) {
+                                        if (vehiculoExistente.getNumeroPlaca().equals(numeroPlaca)) {
+                                            placaValida = false;
+                                            System.out.println("Ya existe un vehiculo con esta placa. Intente de nuevo.");
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    System.out.println("Placa inválida. Asegúrese de que cumpla con el formato requerido.");
+                                }
+                            } while (!placaValida);
+
                             System.out.println("Ingrese la marca del vehiculo");
                             read.nextLine();
                             String marca = read.nextLine();
@@ -234,10 +257,25 @@ public class Lab3P2_LloydCooperr {
 
                                 switch (propiedadModificar) {
                                     case 1:
-                                        System.out.println("Ingrese la nueva placa del vehiculo");
-                                        String numeroPlaca = read.next();
-                                        motocicleta.setNumeroPlaca(numeroPlaca);
-                                        break;
+                                    boolean placaValida = false;
+                                    String nuevaPlaca;
+
+                                    do {
+                                        System.out.println("Ingrese la nueva placa del vehículo (Formato: HXXX1234 o BXXX1234):");
+                                        nuevaPlaca = read.next();
+
+                                        if ((nuevaPlaca.length() == 8) &&
+                                            ((nuevaPlaca.startsWith("H") || nuevaPlaca.startsWith("B"))) &&
+                                            (nuevaPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                            (nuevaPlaca.substring(4).matches("\\d+"))) {
+                                            placaValida = true;
+                                        } else {
+                                            System.out.println("Placa inválida. Asegúrese de que cumpla con el formato requerido.");
+                                        }
+                                    } while (!placaValida);
+
+                                    motocicleta.setNumeroPlaca(nuevaPlaca);
+                                    break;
                                     case 2:
                                         System.out.println("Ingrese la nueva marca del vehículo");
                                         String nuevaMarca = read.next();
@@ -281,8 +319,7 @@ public class Lab3P2_LloydCooperr {
                                     default:
                                         System.out.println("Opción no válida");
                                         break;
-                                }
-                                
+                                }           
                             } while (propiedadModificar != 0);
 
                         } else if (vehiculoModificar instanceof Autobus) {
