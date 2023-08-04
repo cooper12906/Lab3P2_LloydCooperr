@@ -170,17 +170,34 @@ public class Lab3P2_LloydCooperr {
                                         automovil.setTipo(nuevoTipo);
                                         break;
                                     case 5:
-                                        System.out.println("Ingrese el nuevo ");
+                                        System.out.println("Ingrese el nuevo color del vehiculo");
+                                        Color color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
+                                        automovil.setColor(color);
                                         break;
                                     case 6:
+                                        System.out.println("Ingrese el nuevo ano del carro");
+                                        Date año = new Date(read.next());
+                                        automovil.setAño(año);
                                         break;
                                     case 7:
+                                        System.out.println("Ingrese el nuevo tipo de combustible");
+                                        String tipoCombustible = read.next();
+                                        automovil.setTipoCombustible(tipoCombustible);
                                         break;
                                     case 8:
+                                        System.out.println("Ingrese el nuevo numero de puertas");
+                                        int numeroPuertas = read.nextInt();
+                                        automovil.setNumeroPuertas(numeroPuertas);
                                         break;
                                     case 9:
+                                        System.out.println("Ingrese el nuevo tipo de transmision");
+                                        String tipoTransmision = read.next();
+                                        automovil.setTipoTransmision(tipoTransmision);
                                         break;
                                     case 10:
+                                        System.out.println("Ingrese el nuevo numero de asientos");
+                                        int numeroAsientos = read.nextInt();
+                                        automovil.setNumeroAsientos(numeroAsientos);
                                         break;
                                     default:
                                         System.out.println("Opción no válida");
@@ -190,7 +207,9 @@ public class Lab3P2_LloydCooperr {
                             } while (propiedadModificar != 0);
 
                         } else if (vehiculoModificar instanceof Motocicleta) {
-                            // Código similar para la modificación de una motocicleta
+                            Motocicleta motocicleta = (Motocicleta) vehiculoModificar;
+                            
+                            
 
                         } else if (vehiculoModificar instanceof Autobus) {
                             // Código similar para la modificación de un autobús
