@@ -43,7 +43,7 @@ public class Lab3P2_LloydCooperr {
                             String numeroPlaca;
 
                             do {
-                                System.out.println("Ingrese el numero de placa (Formato: HXXX1234 para automóviles y autobuses):");
+                                System.out.println("Ingrese el numero de placa (Formato: HXX1234 para automóviles y autobuses):");
                                 numeroPlaca = read.next();
 
                                 if ((numeroPlaca.length() == 7) &&
@@ -93,7 +93,7 @@ public class Lab3P2_LloydCooperr {
                             placaValida = false;
                             
                             do {
-                                System.out.println("Ingrese el numero de placa (BXXX1234 para motocicletas):");
+                                System.out.println("Ingrese el numero de placa (BXX1234 para motocicletas):");
                                 numeroPlaca = read.next();
 
                                 if ((numeroPlaca.length() == 7) &&
