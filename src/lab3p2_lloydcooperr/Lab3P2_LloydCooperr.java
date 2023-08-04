@@ -209,13 +209,142 @@ public class Lab3P2_LloydCooperr {
                         } else if (vehiculoModificar instanceof Motocicleta) {
                             Motocicleta motocicleta = (Motocicleta) vehiculoModificar;
                             
-                            
+                            int propiedadModificar = 0;
+                            do {
+                                System.out.println("Seleccione la propiedad que desea modificar:");
+                                System.out.println("1. Placa");
+                                System.out.println("2. Marca");
+                                System.out.println("3. Modelo");
+                                System.out.println("4. Tipo");
+                                System.out.println("5. Color");
+                                System.out.println("6. Ano");
+                                System.out.println("7. Velocidad maxima");
+                                System.out.println("8. Peso");
+                                System.out.println("9. Consumo de combustible");
+                                propiedadModificar = read.nextInt();
+
+                                switch (propiedadModificar) {
+                                    case 1:
+                                        System.out.println("Ingrese la nueva placa del vehiculo");
+                                        String numeroPlaca = read.next();
+                                        motocicleta.setNumeroPlaca(numeroPlaca);
+                                        break;
+                                    case 2:
+                                        System.out.println("Ingrese la nueva marca del vehículo");
+                                        String nuevaMarca = read.next();
+                                        motocicleta.setMarca(nuevaMarca);
+                                        break;
+                                    case 3:
+                                        System.out.println("Ingrese el nuevo modelo del vehículo");
+                                        String nuevoModelo = read.next();
+                                        motocicleta.setModelo(nuevoModelo);
+                                        break;
+                                    case 4:
+                                        System.out.println("Ingrese el nuevo tipo del vehículo");
+                                        String nuevoTipo = read.next();
+                                        motocicleta.setTipo(nuevoTipo);
+                                        break;
+                                    case 5:
+                                        System.out.println("Ingrese el nuevo color del vehiculo");
+                                        Color color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
+                                        motocicleta.setColor(color);
+                                        break;
+                                    case 6:
+                                        System.out.println("Ingrese el nuevo año del carro");
+                                        Date año = new Date(read.next());
+                                        motocicleta.setAño(año);
+                                        break;
+                                    case 7:
+                                        System.out.println("Ingrese la velocidad maxima de la motocicleta");
+                                        double velocidadMaxima = read.nextDouble();
+                                        motocicleta.setVelocidadMaxima(velocidadMaxima);
+                                        break;
+                                    case 8:
+                                        System.out.println("Ingrese el peso de la motocicleta");
+                                        double pesoMoto = read.nextInt();
+                                        motocicleta.setPeso(pesoMoto);
+                                        break;
+                                    case 9:
+                                        System.out.println("Ingrese el consumo de combustible de la motocicleta");
+                                        double consumoCombustible = read.nextDouble();
+                                        motocicleta.setConsumoCombustible(consumoCombustible);
+                                        break;
+                                    default:
+                                        System.out.println("Opción no válida");
+                                        break;
+                                }
+                                
+                            } while (propiedadModificar != 0);
 
                         } else if (vehiculoModificar instanceof Autobus) {
-                            // Código similar para la modificación de un autobús
+                            Autobus autobus = (Autobus) vehiculoModificar;
+                            
+                            int propiedadModificar = 0;
+                            do {
+                                System.out.println("Seleccione la propiedad que desea modificar:");
+                                System.out.println("1. Placa");
+                                System.out.println("2. Marca");
+                                System.out.println("3. Modelo");
+                                System.out.println("4. Tipo");
+                                System.out.println("5. Color");
+                                System.out.println("6. Año");
+                                System.out.println("7. Velocidad maxima");
+                                System.out.println("8. Peso");
+                                System.out.println("9. Consumo de combustible");
+                                propiedadModificar = read.nextInt();
 
+                                switch (propiedadModificar) {
+                                    case 1:
+                                        System.out.println("Ingrese la nueva placa del vehiculo");
+                                        String numeroPlaca = read.next();
+                                        autobus.setNumeroPlaca(numeroPlaca);
+                                        break;
+                                    case 2:
+                                        System.out.println("Ingrese la nueva marca del vehículo");
+                                        String nuevaMarca = read.next();
+                                        autobus.setMarca(nuevaMarca);
+                                        break;
+                                    case 3:
+                                        System.out.println("Ingrese el nuevo modelo del vehículo");
+                                        String nuevoModelo = read.next();
+                                        autobus.setModelo(nuevoModelo);
+                                        break;
+                                    case 4:
+                                        System.out.println("Ingrese el nuevo tipo del vehículo");
+                                        String nuevoTipo = read.next();
+                                        autobus.setTipo(nuevoTipo);
+                                        break;
+                                    case 5:
+                                        System.out.println("Ingrese el nuevo color del vehiculo");
+                                        Color color = JColorChooser.showDialog(null, "Elija color:", Color.yellow);
+                                        autobus.setColor(color);
+                                        break;
+                                    case 6:
+                                        System.out.println("Ingrese el nuevo año del carro");
+                                        Date año = new Date(read.next());
+                                        autobus.setAño(año);
+                                        break;
+                                    case 7:
+                                        System.out.println("Ingrese la velocidad maxima de la motocicleta");
+                                        int capacidadPasajeros= read.nextInt();
+                                        autobus.setCapacidadPasajeros(capacidadPasajeros);
+                                        break;
+                                    case 8:
+                                        System.out.println("Ingrese el peso de la motocicleta");
+                                        int numeroEjes = read.nextInt();
+                                        autobus.setNumeroEjes(numeroEjes);
+                                        break;
+                                    case 9:
+                                        System.out.println("Ingrese el consumo de combustible de la motocicleta");
+                                        double longitud = read.nextDouble();
+                                        autobus.setLongitud(longitud);
+                                        break;
+                                    default:
+                                        System.out.println("Opción no válida");
+                                        break;
+                                }
+                            } while (propiedadModificar != 0);
                         }
-
                         vehiculos.set(vehiculoIndex, vehiculoModificar);
                         System.out.println("Vehículo modificado correctamente");
                     } else {
@@ -250,7 +379,9 @@ public class Lab3P2_LloydCooperr {
                 case 4:
                     
                     break;
+                case 5:
+                    break;
             }
-        }while (opcion != 5);
+        }while (opcion != 6);
     }
 }
