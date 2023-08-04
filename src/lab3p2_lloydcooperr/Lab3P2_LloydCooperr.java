@@ -46,9 +46,9 @@ public class Lab3P2_LloydCooperr {
                                 System.out.println("Ingrese el numero de placa (Formato: HXXX1234 para automóviles y autobuses):");
                                 numeroPlaca = read.next();
 
-                                if ((numeroPlaca.length() == 8) &&
+                                if ((numeroPlaca.length() == 7) &&
                                     ((numeroPlaca.startsWith("H"))) &&
-                                    (numeroPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                    (numeroPlaca.substring(1, 3).matches("[A-Z]+")) &&
                                     (numeroPlaca.substring(4).matches("\\d+"))) {
                                     placaValida = true;
 
@@ -96,9 +96,9 @@ public class Lab3P2_LloydCooperr {
                                 System.out.println("Ingrese el numero de placa (BXXX1234 para motocicletas):");
                                 numeroPlaca = read.next();
 
-                                if ((numeroPlaca.length() == 8) &&
+                                if ((numeroPlaca.length() == 7) &&
                                     ((numeroPlaca.startsWith("B"))) &&
-                                    (numeroPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                    (numeroPlaca.substring(1, 3).matches("[A-Z]+")) &&
                                     (numeroPlaca.substring(4).matches("\\d+"))) {
                                     placaValida = true;
 
@@ -152,7 +152,7 @@ public class Lab3P2_LloydCooperr {
 
                                 if ((numeroPlaca.length() == 7) &&
                                     ((numeroPlaca.startsWith("H"))) &&
-                                    (numeroPlaca.substring(1, 4).matches("[A-Z]+")) &&
+                                    (numeroPlaca.substring(1, 3).matches("[A-Z]+")) &&
                                     (numeroPlaca.substring(4).matches("\\d+"))) {
                                     placaValida = true;
 
