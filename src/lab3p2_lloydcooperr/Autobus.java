@@ -1,12 +1,15 @@
 package lab3p2_lloydcooperr;
 
+import java.awt.Color;
+import java.util.Date;
+
 public class Autobus extends Vehiculo {
     private int capacidadPasajeros;
     private int numeroEjes;
     private double longitud;
 
-    public Autobus(int capacidadPasajeros, int numeroEjes, double longitud, String numeroPlaca, String marca, String modelo, String tipo) {
-        super(numeroPlaca, marca, modelo, tipo);
+    public Autobus(int capacidadPasajeros, int numeroEjes, double longitud, String numeroPlaca, String marca, String modelo, String tipo, Color color, Date año) {
+        super(numeroPlaca, marca, modelo, tipo, color, año);
         this.capacidadPasajeros = capacidadPasajeros;
         this.numeroEjes = numeroEjes;
         this.longitud = longitud;

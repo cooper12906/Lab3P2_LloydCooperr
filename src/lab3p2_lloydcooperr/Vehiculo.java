@@ -1,16 +1,23 @@
 package lab3p2_lloydcooperr;
 
+import java.awt.Color;
+import java.util.Date;
+
 public class Vehiculo {
     private String numeroPlaca;
     private String marca;
     private String modelo;
     private String tipo;
+    private Color color;
+    private Date año;
 
-    public Vehiculo(String numeroPlaca, String marca, String modelo, String tipo) {
+    public Vehiculo(String numeroPlaca, String marca, String modelo, String tipo, Color color, Date año) {
         this.numeroPlaca = numeroPlaca;
         this.marca = marca;
         this.modelo = modelo;
         this.tipo = tipo;
+        this.color = color;
+        this.año = año;
     }
 
     public String getNumeroPlaca() {
@@ -45,14 +52,32 @@ public class Vehiculo {
         this.tipo = tipo;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Date getAño() {
+        return año;
+    }
+
+    public void setAño(Date año) {
+        this.año = año;
+    }
+
     @Override
     public String toString() {
-        return "Vehiculo:" + 
-                "numeroPlaca=" + numeroPlaca + 
+        return "Vehiculo{" + 
+                "numeroPlaca=" + numeroPlaca +
                 ", marca=" + marca + 
                 ", modelo=" + modelo + 
-                ", tipo=" + tipo;
+                ", tipo=" + tipo + 
+                ", color=" + color + 
+                ", año" + año;
     }
-    
+
     
 }

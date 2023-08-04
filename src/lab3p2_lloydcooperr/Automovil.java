@@ -1,18 +1,23 @@
 package lab3p2_lloydcooperr;
 
+import java.awt.Color;
+import java.util.Date;
+
 public class Automovil extends Vehiculo {
    private String tipoCombustible;
    private int numeroPuertas;
    private String tipoTransmision;
    private int numeroAsientos;
 
-    public Automovil(String tipoCombustible, int numeroPuertas, String tipoTransmision, int numeroAsientos, String numeroPlaca, String marca, String modelo, String tipo) {
-        super(numeroPlaca, marca, modelo, tipo);
+    public Automovil(String tipoCombustible, int numeroPuertas, String tipoTransmision, int numeroAsientos, String numeroPlaca, String marca, String modelo, String tipo, Color color, Date año) {
+        super(numeroPlaca, marca, modelo, tipo, color, año);
         this.tipoCombustible = tipoCombustible;
         this.numeroPuertas = numeroPuertas;
         this.tipoTransmision = tipoTransmision;
         this.numeroAsientos = numeroAsientos;
     }
+
+    
 
     public String getTipoCombustible() {
         return tipoCombustible;

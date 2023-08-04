@@ -1,12 +1,15 @@
 package lab3p2_lloydcooperr;
 
+import java.awt.Color;
+import java.util.Date;
+
 public class Motocicleta extends Vehiculo {
     private double velocidadMaxima;
     private double peso;
     private double consumoCombustible;
 
-    public Motocicleta(double velocidadMaxima, double peso, double consumoCombustible, String numeroPlaca, String marca, String modelo, String tipo) {
-        super(numeroPlaca, marca, modelo, tipo);
+    public Motocicleta(double velocidadMaxima, double peso, double consumoCombustible, String numeroPlaca, String marca, String modelo, String tipo, Color color, Date año) {
+        super(numeroPlaca, marca, modelo, tipo, color, año);
         this.velocidadMaxima = velocidadMaxima;
         this.peso = peso;
         this.consumoCombustible = consumoCombustible;
