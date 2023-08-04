@@ -4,12 +4,12 @@ import java.awt.Color;
 import java.util.Date;
 
 public class Vehiculo {
-    private String numeroPlaca;
-    private String marca;
-    private String modelo;
-    private String tipo;
-    private Color color;
-    private Date año;
+    protected String numeroPlaca;
+    protected String marca;
+    protected String modelo;
+    protected String tipo;
+    protected Color color;
+    protected Date año;
 
     public Vehiculo(String numeroPlaca, String marca, String modelo, String tipo, Color color, Date año) {
         this.numeroPlaca = numeroPlaca;
@@ -76,7 +76,8 @@ public class Vehiculo {
                 ", modelo=" + modelo + 
                 ", tipo=" + tipo + 
                 ", color=" + color + 
-                ", año" + año;
+                ", año" + año ;
+        
     }
 
     

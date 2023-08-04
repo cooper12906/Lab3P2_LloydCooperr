@@ -23,7 +23,8 @@ public class Lab3P2_LloydCooperr {
             System.out.println("2. Modificar vehiculo");
             System.out.println("3. Eliminar vehiculo");
             System.out.println("4. Listar vehiculo");
-            System.out.println("5. Salir");
+            System.out.println("5. Generar boleta");
+            System.out.println("6. Salir");
             System.out.println("--------------------");
             opcion = read.nextInt();
             read = new Scanner(System.in);
@@ -41,8 +42,9 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Ingrese el numero de placa");
                             String numeroPlaca = read.next();
                             System.out.println("Ingrese la marca del vehiculo");
-                            String marca = read.nextLine();
                             read.nextLine();
+                            String marca = read.nextLine();
+                            read = new Scanner(System.in);
                             System.out.println("Ingrese el modelo del vehiculo");
                             String modelo = read.nextLine();
                             System.out.println("Ingrese el tipo de vehiculo");
@@ -68,7 +70,9 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Ingrese el numero de placa");
                             numeroPlaca = read.next();
                             System.out.println("Ingrese la marca del vehiculo");
+                            read.nextLine();
                             marca = read.nextLine();
+                            read = new Scanner(System.in);
                             System.out.println("Ingrese el modelo del vehiculo");
                             modelo = read.nextLine();
                             System.out.println("Ingrese el tipo de vehiculo");
@@ -91,7 +95,9 @@ public class Lab3P2_LloydCooperr {
                             System.out.println("Ingrese el numero de placa");
                             numeroPlaca = read.next();
                             System.out.println("Ingrese la marca del vehiculo");
+                            read.nextLine();
                             marca = read.nextLine();
+                            read = new Scanner(System.in);
                             System.out.println("Ingrese el modelo del vehiculo");
                             modelo = read.nextLine();
                             System.out.println("Ingrese el tipo de vehiculo");
@@ -146,6 +152,7 @@ public class Lab3P2_LloydCooperr {
                                 System.out.println("8. Numero de puertas");
                                 System.out.println("9. Tipo de transmision");
                                 System.out.println("10. Numero de asientos");
+                                System.out.println("0. Salir y modificar");
                                 propiedadModificar = read.nextInt();
 
                                 switch (propiedadModificar) {
@@ -153,6 +160,7 @@ public class Lab3P2_LloydCooperr {
                                         System.out.println("Ingrese la nueva placa del vehiculo");
                                         String numeroPlaca = read.next();
                                         automovil.setNumeroPlaca(numeroPlaca);
+                                        
                                         break;
                                     case 2:
                                         System.out.println("Ingrese la nueva marca del vehículo");
@@ -221,6 +229,7 @@ public class Lab3P2_LloydCooperr {
                                 System.out.println("7. Velocidad maxima");
                                 System.out.println("8. Peso");
                                 System.out.println("9. Consumo de combustible");
+                                System.out.println("0. Salir y modificar");
                                 propiedadModificar = read.nextInt();
 
                                 switch (propiedadModificar) {
@@ -288,9 +297,10 @@ public class Lab3P2_LloydCooperr {
                                 System.out.println("4. Tipo");
                                 System.out.println("5. Color");
                                 System.out.println("6. Año");
-                                System.out.println("7. Velocidad maxima");
-                                System.out.println("8. Peso");
-                                System.out.println("9. Consumo de combustible");
+                                System.out.println("7. Capacidad de pasajeros");
+                                System.out.println("8. Numero de ejes");
+                                System.out.println("9. Longitud");
+                                System.out.println("0. Salir y modificar");
                                 propiedadModificar = read.nextInt();
 
                                 switch (propiedadModificar) {
@@ -326,7 +336,7 @@ public class Lab3P2_LloydCooperr {
                                         break;
                                     case 7:
                                         System.out.println("Ingrese la velocidad maxima de la motocicleta");
-                                        int capacidadPasajeros= read.nextInt();
+                                        int capacidadPasajeros = read.nextInt();
                                         autobus.setCapacidadPasajeros(capacidadPasajeros);
                                         break;
                                     case 8:
@@ -352,34 +362,97 @@ public class Lab3P2_LloydCooperr {
                     }
                     break;
                 case 3:
-                    System.out.println("Que desea eliminar?");
-                    System.out.println("1. Automovil");
-                    System.out.println("2. Motocicleta");
-                    System.out.println("3. Autobus");
-                    op2 = read.nextInt();
-                    
-                    switch (op2){
-                        case 1:
-                            
-                            break;
-                        case 2:
-                           
-                            break;
-                        case 3:
-                            
-                            break;
-                        case 4:
-                        
-                            break;
-                        default:
-                            System.out.println("Opcion invalida");
-                            break;
+                    System.out.println("Seleccione el vehiculo que desea eliminar:");
+
+                    for (int i = 0; i < vehiculos.size(); i++) {
+                        System.out.println((i + 1) + ". " + vehiculos.get(i).toString());
+                    }
+
+                    int seleccionEliminar = read.nextInt();
+
+                    if (seleccionEliminar >= 1 && seleccionEliminar <= vehiculos.size()) {
+                        Vehiculo vehiculoEliminar = vehiculos.get(seleccionEliminar - 1);
+
+                        System.out.println("Esta seguro de que desea eliminar el siguiente vehículo?");
+                        System.out.println(vehiculoEliminar.toString()); 
+                        System.out.println("1. Sí");
+                        System.out.println("2. No");
+
+                        int confirmacion = read.nextInt();
+
+                        if (confirmacion == 1) {
+                            vehiculos.remove(seleccionEliminar - 1);
+                            System.out.println("Vehiculo eliminado correctamente");
+                        } else {
+                            System.out.println("Operacion cancelada");
+                        }
+                    } else {
+                        System.out.println("Seleccion no valida");
                     }
                     break;
                 case 4:
-                    
+                    System.out.println("Vehiculos registrados:");
+
+                    int totalAutomoviles = 0;
+                    int totalMotocicletas = 0;
+                    int totalAutobuses = 0;
+
+                    System.out.println("Automoviles:");
+                    for (Vehiculo vehiculo : vehiculos) {
+                        if (vehiculo instanceof Automovil) {
+                            System.out.println(vehiculo.toString()); 
+                            totalAutomoviles++;
+                        }
+                    }
+
+                    System.out.println("Motocicletas:");
+                    for (Vehiculo vehiculo : vehiculos) {
+                        if (vehiculo instanceof Motocicleta) {
+                            System.out.println(vehiculo.toString()); 
+                            totalMotocicletas++;
+                        }
+                    }
+
+                    System.out.println("Autobuses:");
+                    for (Vehiculo vehiculo : vehiculos) {
+                        if (vehiculo instanceof Autobus) {
+                            System.out.println(vehiculo.toString()); 
+                            totalAutobuses++;
+                        }
+                    }
+
+                    System.out.println("Total de Automoviles: " + totalAutomoviles);
+                    System.out.println("Total de Motocicletas: " + totalMotocicletas);
+                    System.out.println("Total de Autobuses: " + totalAutobuses);
                     break;
                 case 5:
+                    System.out.println("Seleccione el vehículo para generar la Boleta de Revisión Vehicular:");
+
+                    for (int i = 0; i < vehiculos.size(); i++) {
+                        System.out.println((i + 1) + ". " + vehiculos.get(i).toString()); 
+                    }
+
+                    int seleccion = read.nextInt();
+
+                    if (seleccion >= 1 && seleccion <= vehiculos.size()) {
+                        Vehiculo vehiculoSeleccionado = vehiculos.get(seleccion - 1);
+                        double totalTasa = 275 + 250; 
+
+                        if (vehiculoSeleccionado instanceof Automovil) {
+                            totalTasa += 1200;
+                        } else if (vehiculoSeleccionado instanceof Motocicleta) {
+                            totalTasa += 200;
+                        } else if (vehiculoSeleccionado instanceof Autobus) {
+                            totalTasa += 1000;
+                        }
+
+                        System.out.println("Boleta de revision vehicular");
+                        System.out.println("Datos del vehículo:");
+                        System.out.println(vehiculoSeleccionado.toString()); // Asumiendo que has implementado el método toString en la clase Vehiculo
+                        System.out.println("Total a Pagar de la tasa vehicular: Lps." + totalTasa);
+                    } else {
+                        System.out.println("Seleccion no valida");
+                    }
                     break;
             }
         }while (opcion != 6);

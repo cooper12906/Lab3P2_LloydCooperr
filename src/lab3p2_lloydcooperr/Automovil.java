@@ -53,13 +53,16 @@ public class Automovil extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Automovil:" + 
-                "tipoCombustible=" + tipoCombustible + 
-                ", numeroPuertas=" + numeroPuertas + 
-                ", tipoTransmision=" + tipoTransmision + 
-                ", numeroAsientos=" + numeroAsientos;
+        return "Automovil:\n" +
+               "Número de placa: " + getNumeroPlaca() + "\n" +
+               "Marca: " + getMarca() + "\n" +
+               "Modelo: " + getModelo() + "\n" +
+               "Tipo: " + getTipo() + "\n" +
+               "Color: " + getColor().toString() + "\n" +
+               "Año: " + getAño().toString() + "\n" +
+               "Tipo de combustible: " + tipoCombustible + "\n" +
+               "Número de puertas: " + numeroPuertas + "\n" +
+               "Tipo de transmisión: " + tipoTransmision + "\n" +
+               "Número de asientos: " + numeroAsientos;
     }
-   
-    
-   
 }

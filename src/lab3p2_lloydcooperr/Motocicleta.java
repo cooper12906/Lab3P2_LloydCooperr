@@ -41,11 +41,15 @@ public class Motocicleta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Motocicleta{" + 
-                "velocidadMaxima=" + velocidadMaxima + 
-                ", peso=" + peso + 
-                ", consumoCombustible=" + consumoCombustible;
+        return "Motocicleta:\n" +
+               "Número de placa: " + getNumeroPlaca() + "\n" +
+               "Marca: " + getMarca() + "\n" +
+               "Modelo: " + getModelo() + "\n" +
+               "Tipo: " + getTipo() + "\n" +
+               "Color: " + getColor().toString() + "\n" +
+               "Año: " + getAño().toString() + "\n" +
+               "Velocidad máxima: " + velocidadMaxima + "\n" +
+               "Peso: " + peso + "\n" +
+               "Consumo de combustible: " + consumoCombustible;
     }
-    
-    
 }
