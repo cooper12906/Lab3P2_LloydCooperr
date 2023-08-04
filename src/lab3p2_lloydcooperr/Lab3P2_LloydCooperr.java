@@ -289,7 +289,6 @@ public class Lab3P2_LloydCooperr {
                                         automovil.setNumeroAsientos(numeroAsientos);
                                         break;
                                     default:
-                                        System.out.println("Opción no válida");
                                         break;
                                 }
 
@@ -375,7 +374,6 @@ public class Lab3P2_LloydCooperr {
                                         motocicleta.setConsumoCombustible(consumoCombustible);
                                         break;
                                     default:
-                                        System.out.println("Opción no válida");
                                         break;
                                 }           
                             } while (propiedadModificar != 0);
@@ -460,7 +458,6 @@ public class Lab3P2_LloydCooperr {
                                         autobus.setLongitud(longitud);
                                         break;
                                     default:
-                                        System.out.println("Opción no válida");
                                         break;
                                 }
                             } while (propiedadModificar != 0);
